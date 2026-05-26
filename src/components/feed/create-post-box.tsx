@@ -12,7 +12,7 @@ const actions = [
   { label: "Video", icon: Video, color: "text-rose-500 bg-rose-500/10" },
   { label: "Feeling", icon: Smile, color: "text-amber-500 bg-amber-500/10" },
   { label: "Check in", icon: MapPin, color: "text-sky-500 bg-sky-500/10" },
-  { label: "AI assist", icon: Sparkles, color: "text-violet-500 bg-violet-500/10" },
+  { label: "AI assist", icon: Sparkles, color: "text-sky-500 bg-sky-500/10" },
 ];
 
 export function CreatePostBox({ onCreate }: { onCreate?: (text: string) => void }) {

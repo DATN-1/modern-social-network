@@ -50,7 +50,7 @@ export default function ProfilePage() {
           <div
             className={cn(
               "h-48 w-full bg-gradient-to-br sm:h-64",
-              user.coverColor ?? "from-indigo-500 via-fuchsia-500 to-rose-500"
+              user.coverColor ?? "from-indigo-500 via-sky-500 to-teal-500"
             )}
           />
           <motion.button
@@ -174,7 +174,7 @@ export default function ProfilePage() {
               <motion.span
                 layoutId="profile-tab"
                 transition={{ type: "spring", stiffness: 400, damping: 28 }}
-                className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-rose-500 shadow-[var(--shadow-glow)]"
+                className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-indigo-500 via-sky-500 to-teal-500 shadow-[var(--shadow-glow)]"
               />
             )}
             {t}

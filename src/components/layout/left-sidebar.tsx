@@ -71,7 +71,7 @@ export function LeftSidebar() {
                   <motion.span
                     layoutId="sidebar-active"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-rose-500 shadow-[var(--shadow-glow)]"
+                    className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-indigo-500 via-sky-500 to-teal-500 shadow-[var(--shadow-glow)]"
                   />
                 )}
                 <Icon

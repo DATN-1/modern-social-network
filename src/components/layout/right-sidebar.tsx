@@ -47,7 +47,7 @@ export function RightSidebar() {
 
       <div className="glass rounded-3xl p-5">
         <div className="mb-3 flex items-center gap-2">
-          <span className="flex size-7 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 to-rose-500 text-white">
+          <span className="flex size-7 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 text-white">
             <UserPlus className="size-4" />
           </span>
           <h3 className="text-sm font-bold">Suggested for you</h3>
@@ -105,7 +105,7 @@ export function RightSidebar() {
                     )}
                   </div>
                   {thread && thread.unread > 0 && (
-                    <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-fuchsia-500 px-1.5 text-[10px] font-bold text-white">
+                    <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-teal-500 px-1.5 text-[10px] font-bold text-white">
                       {thread.unread}
                     </span>
                   )}

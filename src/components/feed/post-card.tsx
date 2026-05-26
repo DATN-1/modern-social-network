@@ -321,7 +321,7 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
               <div className="flex items-center gap-2 pt-2">
                 <Avatar
                   name="Me"
-                  gradient="from-indigo-500 via-violet-500 to-pink-500"
+                  gradient="from-indigo-500 via-sky-500 to-teal-500"
                   size="sm"
                 />
                 <div className="flex flex-1 items-center gap-1 rounded-full bg-[rgb(var(--muted))] px-3 py-2">

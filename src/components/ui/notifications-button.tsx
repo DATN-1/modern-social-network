@@ -18,7 +18,7 @@ const iconByType = {
   like: { icon: Heart, color: "text-rose-500 bg-rose-500/10" },
   comment: { icon: MessageCircle, color: "text-sky-500 bg-sky-500/10" },
   follow: { icon: UserPlus, color: "text-emerald-500 bg-emerald-500/10" },
-  mention: { icon: AtSign, color: "text-violet-500 bg-violet-500/10" },
+  mention: { icon: AtSign, color: "text-sky-500 bg-sky-500/10" },
   tag: { icon: Tag, color: "text-amber-500 bg-amber-500/10" },
 } as const;
 
@@ -38,7 +38,7 @@ export function NotificationsButton() {
           <motion.span
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 to-pink-500 px-1 text-[10px] font-bold text-white shadow-md"
+            className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 to-red-500 px-1 text-[10px] font-bold text-white shadow-md"
           >
             {unread}
           </motion.span>

@@ -18,10 +18,10 @@ import { Avatar } from "@/components/ui/avatar";
 import { cn, formatCount } from "@/lib/utils";
 
 const categories = [
-  { label: "For you", icon: Sparkles, color: "from-indigo-500 to-fuchsia-500" },
-  { label: "Trending", icon: TrendingUp, color: "from-rose-500 to-orange-500" },
-  { label: "Music", icon: Music, color: "from-purple-500 to-violet-600" },
-  { label: "Photos", icon: Camera, color: "from-amber-500 to-rose-500" },
+  { label: "For you", icon: Sparkles, color: "from-indigo-500 to-teal-500" },
+  { label: "Trending", icon: TrendingUp, color: "from-amber-500 to-orange-500" },
+  { label: "Music", icon: Music, color: "from-sky-500 to-indigo-600" },
+  { label: "Photos", icon: Camera, color: "from-amber-500 to-orange-500" },
   { label: "Tech", icon: Code, color: "from-sky-500 to-blue-600" },
   { label: "Fitness", icon: Dumbbell, color: "from-emerald-500 to-teal-600" },
   { label: "Travel", icon: Plane, color: "from-cyan-500 to-sky-600" },
@@ -37,9 +37,9 @@ export default function ExplorePage() {
         animate={{ opacity: 1, y: 0 }}
         className="glass relative overflow-hidden rounded-3xl p-6"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-fuchsia-500/10 to-rose-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-sky-500/10 to-teal-500/10" />
         <div className="relative flex items-center gap-4">
-          <span className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-rose-500 text-white shadow-[var(--shadow-glow)]">
+          <span className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 via-sky-500 to-teal-500 text-white shadow-[var(--shadow-glow)]">
             <Globe2 className="size-7" />
           </span>
           <div>
@@ -98,7 +98,7 @@ export default function ExplorePage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.04 }}
               whileHover={{ scale: 1.05 }}
-              className="cursor-pointer rounded-full bg-gradient-to-r from-indigo-500/10 via-fuchsia-500/10 to-rose-500/10 px-3 py-1.5 text-sm font-semibold text-gradient"
+              className="cursor-pointer rounded-full bg-gradient-to-r from-indigo-500/10 via-sky-500/10 to-teal-500/10 px-3 py-1.5 text-sm font-semibold text-gradient"
             >
               #{t.tag} · {formatCount(t.posts)}
             </motion.span>
@@ -162,7 +162,7 @@ export default function ExplorePage() {
                 <p className="line-clamp-1 text-xs text-[rgb(var(--muted-foreground))]">
                   {u.bio}
                 </p>
-                <button className="mt-1 w-full rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 px-3 py-1.5 text-xs font-bold text-white shadow-[var(--shadow-glow)] transition hover:brightness-110">
+                <button className="mt-1 w-full rounded-full bg-gradient-to-r from-indigo-500 to-teal-500 px-3 py-1.5 text-xs font-bold text-white shadow-[var(--shadow-glow)] transition hover:brightness-110">
                   Follow
                 </button>
               </motion.div>

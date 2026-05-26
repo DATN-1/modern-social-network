@@ -36,7 +36,7 @@ export function MobileNav() {
             {item.accent ? (
               <motion.span
                 whileTap={{ scale: 0.92 }}
-                className="-mt-6 flex size-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-rose-500 text-white shadow-[var(--shadow-glow)]"
+                className="-mt-6 flex size-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-sky-500 to-teal-500 text-white shadow-[var(--shadow-glow)]"
               >
                 <Icon className="size-6" />
               </motion.span>

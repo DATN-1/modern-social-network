@@ -31,7 +31,7 @@ const dotSizes: Record<NonNullable<AvatarProps["size"]>, string> = {
 
 export function Avatar({
   name,
-  gradient = "from-indigo-500 via-violet-500 to-pink-500",
+  gradient = "from-indigo-500 via-sky-500 to-teal-500",
   size = "md",
   online,
   ring,

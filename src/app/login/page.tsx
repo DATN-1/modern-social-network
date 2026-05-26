@@ -49,14 +49,14 @@ export default function LoginPage() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Hero side */}
-          <div className="relative hidden flex-col justify-between overflow-hidden bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-rose-500 p-10 text-white md:flex">
+          <div className="relative hidden flex-col justify-between overflow-hidden bg-gradient-to-br from-indigo-500 via-sky-500 to-teal-500 p-10 text-white md:flex">
             <motion.div
               className="absolute -right-20 -top-20 size-80 rounded-full bg-white/10 blur-3xl"
               animate={{ scale: [1, 1.2, 1], opacity: [0.6, 0.8, 0.6] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-              className="absolute -bottom-20 -left-20 size-80 rounded-full bg-rose-300/20 blur-3xl"
+              className="absolute -bottom-20 -left-20 size-80 rounded-full bg-teal-300/20 blur-3xl"
               animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.7, 0.4] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -80,7 +80,7 @@ export default function LoginPage() {
                 platform built for the modern web.
               </p>
               <div className="mt-6 flex -space-x-2">
-                {["from-amber-300 to-rose-400", "from-cyan-300 to-blue-500", "from-violet-300 to-fuchsia-500", "from-emerald-300 to-teal-500"].map(
+                {["from-amber-300 to-orange-400", "from-cyan-300 to-blue-500", "from-sky-300 to-cyan-500", "from-emerald-300 to-teal-500"].map(
                   (g, i) => (
                     <span
                       key={i}

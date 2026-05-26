@@ -7,10 +7,10 @@ import { getUser, notifications } from "@/lib/mock-data";
 import { timeAgo } from "@/lib/utils";
 
 const iconByType = {
-  like: { icon: Heart, color: "from-rose-500 to-pink-500" },
+  like: { icon: Heart, color: "from-rose-500 to-red-500" },
   comment: { icon: MessageCircle, color: "from-sky-500 to-blue-600" },
   follow: { icon: UserPlus, color: "from-emerald-500 to-teal-600" },
-  mention: { icon: AtSign, color: "from-violet-500 to-fuchsia-600" },
+  mention: { icon: AtSign, color: "from-cyan-500 to-teal-600" },
   tag: { icon: Tag, color: "from-amber-500 to-orange-500" },
 } as const;
 
@@ -71,7 +71,7 @@ export default function NotificationsPage() {
                 </p>
               </div>
               {!n.read && (
-                <span className="size-2.5 shrink-0 rounded-full bg-gradient-to-br from-indigo-500 to-fuchsia-500" />
+                <span className="size-2.5 shrink-0 rounded-full bg-gradient-to-br from-indigo-500 to-teal-500" />
               )}
             </motion.div>
           );

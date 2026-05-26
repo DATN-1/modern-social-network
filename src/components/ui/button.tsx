@@ -19,7 +19,7 @@ const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
   outline:
     "border border-[rgb(var(--border-strong))] bg-transparent text-[rgb(var(--foreground))] hover:bg-[rgb(var(--muted))]",
   gradient:
-    "bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-rose-500 text-white shadow-[var(--shadow-glow)] hover:brightness-110",
+    "bg-gradient-to-r from-indigo-500 via-sky-500 to-teal-500 text-white shadow-[var(--shadow-glow)] hover:brightness-110",
 };
 
 const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {

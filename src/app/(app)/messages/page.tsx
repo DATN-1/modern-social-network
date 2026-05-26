@@ -143,7 +143,7 @@ export default function MessagesPage() {
                   </p>
                 </div>
                 {c.unread > 0 && (
-                  <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-fuchsia-500 text-[10px] font-bold text-white">
+                  <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-teal-500 text-[10px] font-bold text-white">
                     {c.unread}
                   </span>
                 )}
@@ -197,7 +197,7 @@ export default function MessagesPage() {
                     className={cn(
                       "max-w-[75%] rounded-2xl px-4 py-2 text-sm shadow-sm",
                       mine
-                        ? "rounded-br-md bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-rose-500 text-white"
+                        ? "rounded-br-md bg-gradient-to-br from-indigo-500 via-sky-500 to-teal-500 text-white"
                         : "rounded-bl-md bg-[rgb(var(--muted))] text-[rgb(var(--foreground))]"
                     )}
                   >
@@ -236,7 +236,7 @@ export default function MessagesPage() {
             whileHover={{ scale: 1.05 }}
             onClick={send}
             disabled={!draft.trim()}
-            className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-rose-500 text-white shadow-[var(--shadow-glow)] disabled:opacity-50"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-sky-500 to-teal-500 text-white shadow-[var(--shadow-glow)] disabled:opacity-50"
             aria-label="Send"
           >
             <Send className="size-4" />
