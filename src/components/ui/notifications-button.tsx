@@ -95,7 +95,10 @@ export function NotificationsButton() {
                             {n.text}
                           </span>
                         </p>
-                        <p className="text-xs text-[rgb(var(--muted-foreground))]">
+                        <p
+                          className="text-xs text-[rgb(var(--muted-foreground))]"
+                          suppressHydrationWarning
+                        >
                           {timeAgo(n.createdAt)}
                         </p>
                       </div>

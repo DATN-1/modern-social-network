@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider, themeInitScript } from "@/components/providers/theme-provider";
 import "./globals.css";
@@ -34,13 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={jakarta.variable}>
-      <head>
-        <script
-          // Apply stored theme before paint to avoid a flash of incorrect theme.
+      <body className="bg-mesh min-h-screen antialiased">
+        <Script
+          id="nova-theme-init"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: themeInitScript }}
         />
-      </head>
-      <body className="bg-mesh min-h-screen antialiased">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

@@ -46,35 +46,73 @@ export default function ProfilePage() {
     <div className="flex flex-col gap-4">
       {/* Cover */}
       <div className="glass relative overflow-hidden rounded-3xl">
-        <div
-          className={cn(
-            "h-48 w-full bg-gradient-to-br sm:h-64",
-            user.coverColor ?? "from-indigo-500 via-fuchsia-500 to-rose-500"
-          )}
-        />
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="glass-strong absolute right-3 top-3 flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold"
-        >
-          <Camera className="size-3.5" /> Edit cover
-        </motion.button>
-
-        <div className="-mt-12 flex flex-col items-center px-5 pb-5 sm:flex-row sm:items-end sm:gap-5 sm:pb-6">
-          <motion.div
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 200, damping: 18 }}
-            className="relative"
-          >
-            <Avatar name={user.name} gradient={user.avatarColor} size="2xl" ring />
-            {user.online && (
-              <span className="absolute right-2 bottom-2 size-5 rounded-full bg-emerald-500 ring-4 ring-[rgb(var(--card))] pulse-dot" />
+        <div className="relative">
+          <div
+            className={cn(
+              "h-48 w-full bg-gradient-to-br sm:h-64",
+              user.coverColor ?? "from-indigo-500 via-fuchsia-500 to-rose-500"
             )}
-          </motion.div>
+          />
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="glass-strong absolute right-3 top-3 flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold"
+          >
+            <Camera className="size-3.5" /> Edit cover
+          </motion.button>
+        </div>
 
-          <div className="mt-3 flex-1 text-center sm:mt-0 sm:text-left">
-            <div className="flex items-center justify-center gap-1.5 sm:justify-start">
+        <div className="px-5 pb-6 pt-4 sm:px-7">
+          <div className="-mt-20 flex flex-col items-start gap-4 sm:-mt-24 sm:flex-row sm:items-end sm:justify-between">
+            <motion.div
+              initial={{ scale: 0.6, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              className="relative"
+            >
+              <Avatar name={user.name} gradient={user.avatarColor} size="2xl" ring />
+              {user.online && (
+                <span className="absolute right-2 bottom-2 size-5 rounded-full bg-emerald-500 ring-4 ring-[rgb(var(--card))] pulse-dot" />
+              )}
+            </motion.div>
+
+            <div className="flex items-center gap-2">
+              {isMe ? (
+                <>
+                  <Button variant="secondary" size="sm">
+                    Edit profile
+                  </Button>
+                  <Button variant="primary" size="sm">
+                    Share
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    variant={following ? "secondary" : "gradient"}
+                    size="sm"
+                    onClick={() => setFollowing((f) => !f)}
+                  >
+                    {following ? (
+                      <>
+                        <Check className="size-4" /> Following
+                      </>
+                    ) : (
+                      <>
+                        <UserPlus className="size-4" /> Follow
+                      </>
+                    )}
+                  </Button>
+                  <Button variant="secondary" size="sm">
+                    <MessageCircle className="size-4" /> Message
+                  </Button>
+                </>
+              )}
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <div className="flex items-center gap-1.5">
               <h1 className="text-2xl font-bold">{user.name}</h1>
               {user.verified && <BadgeCheck className="size-5 text-sky-500" />}
             </div>
@@ -84,7 +122,7 @@ export default function ProfilePage() {
             {user.bio && (
               <p className="mt-2 max-w-prose text-sm">{user.bio}</p>
             )}
-            <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-xs text-[rgb(var(--muted-foreground))] sm:justify-start">
+            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[rgb(var(--muted-foreground))]">
               <span className="flex items-center gap-1">
                 <MapPin className="size-3.5" /> Ho Chi Minh City
               </span>
@@ -95,40 +133,6 @@ export default function ProfilePage() {
                 <LinkIcon className="size-3.5" /> nova.app/{user.username}
               </span>
             </div>
-          </div>
-
-          <div className="mt-4 flex items-center gap-2 sm:mt-0">
-            {isMe ? (
-              <>
-                <Button variant="secondary" size="sm">
-                  Edit profile
-                </Button>
-                <Button variant="primary" size="sm">
-                  Share
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button
-                  variant={following ? "secondary" : "gradient"}
-                  size="sm"
-                  onClick={() => setFollowing((f) => !f)}
-                >
-                  {following ? (
-                    <>
-                      <Check className="size-4" /> Following
-                    </>
-                  ) : (
-                    <>
-                      <UserPlus className="size-4" /> Follow
-                    </>
-                  )}
-                </Button>
-                <Button variant="secondary" size="sm">
-                  <MessageCircle className="size-4" /> Message
-                </Button>
-              </>
-            )}
           </div>
         </div>
       </div>
@@ -185,7 +189,7 @@ export default function ProfilePage() {
             userPosts.map((p, i) => <PostCard key={p.id} post={p} index={i} />)
           ) : (
             <div className="glass rounded-3xl p-10 text-center text-sm text-[rgb(var(--muted-foreground))]">
-              {user.name} hasn&apos;t posted yet. Be the first to say hi 👋
+              {user.name} hasn&apos;t posted yet. Be the first to say hi <span aria-hidden>👋</span>
             </div>
           )}
         </div>

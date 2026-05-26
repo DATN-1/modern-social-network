@@ -94,7 +94,10 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
             <p className="truncate text-sm font-bold">{author.name}</p>
             {author.verified && <BadgeCheck className="size-4 text-sky-500" />}
           </div>
-          <p className="text-xs text-[rgb(var(--muted-foreground))]">
+          <p
+            className="text-xs text-[rgb(var(--muted-foreground))]"
+            suppressHydrationWarning
+          >
             @{author.username} · {timeAgo(post.createdAt)} ·{" "}
             <span className="text-[rgb(var(--muted-foreground))]">🌐 Public</span>
           </p>

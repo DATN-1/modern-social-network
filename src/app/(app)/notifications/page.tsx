@@ -63,7 +63,10 @@ export default function NotificationsPage() {
                   <span className="font-bold">{actor.name}</span>{" "}
                   <span className="text-[rgb(var(--muted-foreground))]">{n.text}</span>
                 </p>
-                <p className="text-xs text-[rgb(var(--muted-foreground))]">
+                <p
+                  className="text-xs text-[rgb(var(--muted-foreground))]"
+                  suppressHydrationWarning
+                >
                   {timeAgo(n.createdAt)}
                 </p>
               </div>
