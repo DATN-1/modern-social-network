@@ -34,7 +34,7 @@ export function CreatePostBox({ onCreate }: { onCreate?: (text: string) => void 
           onClick={() => setOpen(true)}
           className="flex-1 rounded-full bg-[rgb(var(--muted))] px-5 py-3 text-left text-sm text-[rgb(var(--muted-foreground))] transition hover:bg-[rgb(var(--border))]"
         >
-          What's on your mind, {currentUser.name.split(" ")[0]}?
+          What&apos;s on your mind, {currentUser.name.split(" ")[0]}?
         </button>
       </div>
 

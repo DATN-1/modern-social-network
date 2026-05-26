@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ThemeProvider, themeInitScript } from "@/components/providers/theme-provider";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -34,6 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={jakarta.variable}>
+      <head>
+        <script
+          // Apply stored theme before paint to avoid a flash of incorrect theme.
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+        />
+      </head>
       <body className="bg-mesh min-h-screen antialiased">
         <ThemeProvider>{children}</ThemeProvider>
       </body>

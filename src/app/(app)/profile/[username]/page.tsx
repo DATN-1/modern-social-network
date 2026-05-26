@@ -185,7 +185,7 @@ export default function ProfilePage() {
             userPosts.map((p, i) => <PostCard key={p.id} post={p} index={i} />)
           ) : (
             <div className="glass rounded-3xl p-10 text-center text-sm text-[rgb(var(--muted-foreground))]">
-              {user.name} hasn't posted yet. Be the first to say hi 👋
+              {user.name} hasn&apos;t posted yet. Be the first to say hi 👋
             </div>
           )}
         </div>

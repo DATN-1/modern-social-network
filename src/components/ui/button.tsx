@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = Omit<HTMLMotionProps<"button">, "ref"> & {
   variant?: "primary" | "secondary" | "ghost" | "outline" | "gradient";
   size?: "sm" | "md" | "lg" | "icon";
   fullWidth?: boolean;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { StoriesRow } from "@/components/feed/stories-row";
 import { CreatePostBox } from "@/components/feed/create-post-box";
@@ -10,10 +10,12 @@ import type { Post } from "@/lib/types";
 
 export default function FeedPage() {
   const [posts, setPosts] = useState<Post[]>(seed);
+  const counter = useRef(0);
 
-  function addPost(text: string) {
+  const addPost = useCallback((text: string) => {
+    counter.current += 1;
     const newPost: Post = {
-      id: `p_${Date.now()}`,
+      id: `p_local_${counter.current}`,
       authorId: "u_me",
       text,
       createdAt: new Date().toISOString(),
@@ -23,7 +25,7 @@ export default function FeedPage() {
       topReactions: [],
     };
     setPosts((p) => [newPost, ...p]);
-  }
+  }, []);
 
   return (
     <div className="flex flex-col gap-4">
@@ -52,7 +54,7 @@ export default function FeedPage() {
       </div>
 
       <div className="py-8 text-center text-xs text-[rgb(var(--muted-foreground))]">
-        You've reached the end. Pull up to refresh ↑
+        You&apos;ve reached the end. Pull up to refresh ↑
       </div>
     </div>
   );
